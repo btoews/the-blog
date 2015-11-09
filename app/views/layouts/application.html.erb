@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <title>The blog.</title>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-right">
+        <div class="current-user">
+          <% if logged_in? %>
+            Logged in as @<%= current_user.login %>.
+            <%= link_to "Logout", logout_path, method: :post %>
+          <% else %>
+            <%= link_to "Login", login_path %>
+          <% end %>
+        </div>
+        <%= form_tag search_posts_path, method: "get", class: "search" do %>
+          <%= text_field_tag :q, params[:q] %>
+          <%= submit_tag("Search") %>
+        <% end %>
+      </div>
+      <%= link_to "The blog.", root_path, class: "headline" %>
+    </div>
+    <div class="content">
+      <div class="error-flash"><%= flash[:error] %></div>
+      <div class="notice-flash"><%= flash[:notice] %></div>
+      <%= yield %>
+    </div>
+    <div class="footer">
+      <a href="https://github.com/mastahyeti/the-blog">Fork The Blog on GitHub</a>
+    </div>
+  </body>
+</html>

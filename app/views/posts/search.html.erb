@@ -1,0 +1,7 @@
+<ul>
+  <% @posts.each do |post| %>
+    <li class="post">
+      <%= link_to "Post #{post}", post_path(id: post) %>
+    </li>
+  <% end %>
+</ul>

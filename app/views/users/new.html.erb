@@ -1,0 +1,7 @@
+<%= form_for @user do |f| %>
+  login: <%= f.text_field :login %><br>
+  password: <%= f.password_field :password %><br>
+  password confirmation: <%= f.password_field :password_confirmation %><br>
+  <%= hidden_field_tag :invite, invite.token %>
+  <%= f.submit %>
+<% end %>

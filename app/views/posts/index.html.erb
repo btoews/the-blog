@@ -1,0 +1,7 @@
+<ul>
+  <% @posts.each do |post| %>
+    <li class="post">
+      <%= link_to post.name, post %> <%= link_to("(edit)", edit_post_path(post)) if admin? %>
+    </li>
+  <% end %>
+</ul>
