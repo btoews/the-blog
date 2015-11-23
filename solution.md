@@ -245,4 +245,4 @@ puts generate_invite ct_blocks
 
 ### :zap:
 
-Props to [@kirkelifson](https://github.com/kirkelifson), the only person who figured this one out.
+Props to [@eugeneius](https://github.com/eugeneius), the only person who figured this one out.
