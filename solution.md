@@ -188,7 +188,11 @@ def get_exception_class(id)
   end
 
   # Parse out the exception class.
-  exception["message"].strip.split(/\s/).first
+  if exception.present?
+    exception["message"].strip.split(/\s/).first
+  else
+    return
+  end
 end
 
 def get_logs
